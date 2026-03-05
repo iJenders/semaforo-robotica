@@ -84,6 +84,24 @@ void EncenderLedAzul3()
 	digitalWrite(Led12, HIGH); 
 }
 
+//Funciones para apagar leds para evitar redundancia de codigo
+
+void ApagarTodosLeds(){
+	digitalWrite(Led1, LOW);
+	digitalWrite(Led2, LOW);
+	digitalWrite(Led3, LOW);
+	digitalWrite(Led4, LOW);
+	digitalWrite(Led5, LOW);
+	digitalWrite(Led6, LOW);
+	digitalWrite(Led7, LOW);
+	digitalWrite(Led8, LOW);
+	digitalWrite(Led9, LOW);
+	digitalWrite(Led10, LOW);
+	digitalWrite(Led11, LOW);
+	digitalWrite(Led12, LOW);
+}
+
+
 // Ciclo de vida del arduino
 
 void setup()
