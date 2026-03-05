@@ -124,7 +124,43 @@ void Parpadear2Led(int led1, int led2, int veces){
 }
 
 
-// Ciclo de vida del arduino
+// Funciones para encender los semaforos dependiendo del color
+void Fase1(){
+      ApagarTodosLeds();
+
+      // Estado
+    EncenderLedVerde1();
+      EncenderLedRojo2();
+      EncenderLedRojo3();
+
+      // Tiempo de espera
+      delay(10000);
+
+      // Luz amarilla
+      EncenderLedAmarillo1();
+      digitalWrite(Led1, LOW);
+      delay(3000);
+}
+
+void Fase2(){
+      ApagarTodosLeds();
+
+      // Estado
+    EncenderLedVerde2();
+      EncenderLedAzul1();
+      EncenderLedAzul2();
+      EncenderLedRojo1();
+      EncenderLedRojo3();
+
+      // Tiempo de espera
+      delay(10000);
+
+      // Luz amarilla
+      EncenderLedAmarillo2();
+      digitalWrite(Led5, LOW);
+
+    Parpadear2Led(Led4, Led8, 3);
+}
 
 void setup()
 {
