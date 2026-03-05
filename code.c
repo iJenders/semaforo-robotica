@@ -162,6 +162,41 @@ void Fase2(){
     Parpadear2Led(Led4, Led8, 3);
 }
 
+void Fase3(){
+  	ApagarTodosLeds();
+  
+  	// Estado
+	EncenderLedVerde3();
+  	EncenderLedRojo1();
+  	EncenderLedRojo2();
+  
+  	// Tiempo de espera
+  	delay(10000);
+  
+  	// Luz amarilla
+  	EncenderLedAmarillo3();
+  	digitalWrite(Led9, LOW);
+  	delay(3000);
+}
+
+void Fase4(){
+  	ApagarTodosLeds();
+  
+  	// Estado
+	EncenderLedAzul3();
+  	EncenderLedRojo1();
+  	EncenderLedRojo2();
+  	EncenderLedRojo3();
+  
+  	// Tiempo de espera
+  	delay(10000);
+  
+  	// Parpadeo
+	Parpadear1Led(Led12, 3);
+}
+
+// Ciclo de vida del arduino
+
 void setup()
 {
   for (int i = 0; i <= 13; i++) {
@@ -171,8 +206,8 @@ void setup()
 
 void loop()
 {
-    digitalWrite(2, HIGH);
-    delay(1000);
-    digitalWrite(2, LOW);
-    delay(1000);
+  Fase1();
+  Fase2();
+  Fase3();
+  Fase4();
 }
