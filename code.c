@@ -101,6 +101,28 @@ void ApagarTodosLeds(){
 	digitalWrite(Led12, LOW);
 }
 
+//Funciones para parpadear leds
+
+void Parpadear1Led(int led, int veces){
+	for (int i = 0; i < veces; i++) {
+		digitalWrite(led, HIGH);
+		delay(500);
+		digitalWrite(led, LOW);
+		delay(500);
+	}
+}
+
+void Parpadear2Led(int led1, int led2, int veces){
+	for (int i = 0; i < veces; i++) {
+		digitalWrite(led1, HIGH);
+		digitalWrite(led2, HIGH);
+		delay(500);
+		digitalWrite(led1, LOW);
+		digitalWrite(led2, LOW);
+		delay(500);
+	}
+}
+
 
 // Ciclo de vida del arduino
 
